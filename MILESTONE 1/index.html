@@ -67,8 +67,9 @@
     <!-- FINE PORZIONE DI SINISTRA -->
 
     <!-- INZIO PORZIONE DI DESTRA -->
-
     <div class="chatbox d-flex flex-column overflow-hidden">
+
+      <!-- DETTAGLI PERSONA SELEZIONATA -->
       <div class="chatbar-header p-2 d-flex justify-content-between align-items-center flex-shrink-0">
         <div class="avatarsection">
           <div class="d-flex h-100">
@@ -86,6 +87,7 @@
         </div>
       </div>
 
+      <!-- NUVOLETTE MESSAGGI -->
       <div class="messagesbox flex-grow-1 overflow-auto d-flex flex-column p-5 gap-3">
         <div class="messagecloud sent d-flex align-items-center justify-content-between px-3 flex-shrink-0">
           <div>Hai portato a spasso il cane?</div>
@@ -101,29 +103,17 @@
         </div>
       </div>
 
+      <!-- INPUT MESSAGGIO -->
 
-
-
-
-
-
-      <div class="chatbar-header p-2 d-flex justify-content-between align-items-center flex-shrink-0">
-        <div class="avatarsection">
-          <div class="d-flex h-100">
-            <img src="img/avatar_1.jpg" alt="my profile picture" class="headerpropic me-3" srcset="" />
-            <div>
-              <div>Michele</div>
-              <div class="subtitle">Ultimo accesso oggi alle 12:00</div>
-            </div>
-          </div>
-        </div>
-        <div class="chatbar-header-icons">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <i class="fa-solid fa-paperclip"></i>
-          <i class="fa-solid fa-ellipsis-vertical"></i>
-        </div>
+      <div class="chatbar-inputsection p-2 d-flex align-items-center">
+        <div class="px-4 flex-shrink-0"><i class="fa-regular fa-face-smile"></i></div>
+        <div class="flex-grow-1 textbox"><input type="text" class="form-control" placeholder="Scrivi un messaggio"></div>
+        <div class="px-4 flex-shrink-0"><i class="fa-solid fa-microphone"></i></div>
       </div>
+
     </div>
+
+    <!-- FINE PORZIONE DI DESTRA -->
 
   </div>
 
