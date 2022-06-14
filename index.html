@@ -56,7 +56,7 @@
           </div>
           <div class="chatbar-contact-lastmessage flex-grow-1">
             <div class="contact-name">{{ contatto.name }}</div>
-            <div class="subtitle">{{ "Ultimo messaggio inviato" }}</div>
+            <div class="subtitle">{{ contatto.messages[contatto.messages.length - 1].message }}</div>
           </div>
           <div class="chatbar-time subtitle">12:00</div>
         </div>
