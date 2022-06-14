@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0-beta1/css/bootstrap.min.css"
+    integrity="sha512-o/MhoRPVLExxZjCFVBsm17Pkztkzmh7Dp8k7/3JrtNCHh0AQ489kwpfA3dPSHzKDe8YCuEhxXq3Y71eb/o6amg=="
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.css"
+    integrity="sha512-1hsteeq9xTM5CX6NsXiJu3Y/g+tj+IIwtZMtTisemEv3hx+S9ngaW4nryrNcPM4xGzINcKbwUJtojslX2KG+DQ=="
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.7.0-alpha.6/vue.js"
+    integrity="sha512-xqWhZRkptz1Re1+Dndtqmne0sqlhNVLtkI6mu0dZKlg2Hba5Gck7QQYtMsrRV3mtUvZzPafEeM7V/cg03VKlpw=="
+    crossorigin="anonymous"></script>
+  <title>Boolzapp Web</title>
+</head>
+
+<body>
+  <div class="greenbox"></div> <!-- greenbox -->
+
+  <div class="container boolzwebapp" id="app"> <!-- container di tutta la webapp-->
+
+<!-- INIZIO PORZIONE DI SINISTRA CON PROFILO UTENTE E LISTA CHAT -->
+    <div class="chatbar flex-shrink-0">
+      <div class="chatbar-header p-2 d-flex justify-content-between align-items-center flex-shrink-0">
+        <div class="avatarsection">
+          <img src="img/avatar_io.jpg" alt="my profile picture" class="headerpropic" srcset="" />
+          Sofia
+        </div>
+        <div class="chatbar-header-icons">
+          <i class="fa-solid fa-circle-notch"></i>
+          <i class="fa-solid fa-message"></i>
+          <i class="fa-solid fa-ellipsis-vertical"></i>
+        </div>
+      </div>
+      <div class="chatbar-notification gap-2 p-2 flex-shrink-0">
+        <div class="silentbell"><i class="fa-solid fa-bell-slash"></i></div>
+        <div>
+          <div>Ricevi notifiche di nuovi messaggi</div>
+          <a href="#">Attiva notifiche desktop</a>
+        </div>
+      </div>
+      <div class="chatbar-search p-2 d-flex flex-shrink-0">
+        <div class="input-group mb-3">
+          <span class="input-group-text bg-white px-4" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
+          <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat">
+        </div>
+      </div>
+      <div class="chatbar-list d-flex flex-column flex-shrink-0 flex-grow-1 overflow-auto">
+        <div class="chatbar-list-item py-2 px-4 gap-3 d-flex" v-for="(contatto,i) in contatti">
+          <div class="avatarsection">
+            <img :src=`img/avatar${contatto.avatar}.jpg` class="headerpropic" srcset="" />
+          </div>
+          <div class="chatbar-contact-lastmessage flex-grow-1">
+            <div class="contact-name">{{ contatto.name }}</div>
+            <div class="subtitle">{{ "Ultimo messaggio inviato" }}</div>
+          </div>
+          <div class="chatbar-time subtitle">12:00</div>
+        </div>
+
+      </div>
+    </div>
+<!-- FINE PORZIONE DI SINISTRA -->
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>

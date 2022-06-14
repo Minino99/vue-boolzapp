@@ -1,0 +1,101 @@
+i{
+ color: #B1B1B1;
+ font-size: 1.5rem;
+ padding: 10px;
+ cursor: pointer;
+}
+
+a{
+ font-size: 0.8rem;
+ color: #6b6b6b;
+}
+
+.subtitle{
+ font-size: 0.8rem;
+}
+
+.greenbox{
+ background-color: #009688;
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 15%;
+ z-index: 0;
+}
+
+.boolzwebapp{
+ position: relative;
+ z-index: 1;
+ height: 95vh;
+ margin-top: 2.5vh;
+ margin-bottom: 2.5vh;
+ background-color: white;
+ display: flex;
+ padding-left: 0;
+ padding-right: 0;
+ border: solid 1px #b1b1b180;
+}
+
+.chatbar{
+ display: flex;
+ flex-direction: column;
+ width: 40%;
+ border-right: solid 1px #b1b1b180;
+}
+
+.chatbar-header{
+ height: 65px;
+ background-color: #EAEAEA;
+}
+
+.avatarsection{
+ height: 100%;
+}
+
+.headerpropic{
+ aspect-ratio: 1;
+ height: 100%;
+ border-radius: 50%;
+}
+
+.chatbar-notification{
+ background-color: #8EDAFC;
+ height: 75px;
+ display: flex;
+ align-items: center;
+}
+
+.silentbell {
+ background-color: #F2FBFF;
+ border-radius: 50%;
+ height: 100%;
+ aspect-ratio: 1;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+.chatbar-search{
+ height: 55px;
+ background-color: #FAFAFA;
+}
+
+.chatbar-search i{
+ padding: 0;
+ font-size: 0.9rem;
+}
+
+.chatbar-list-item{
+ height: 75px;
+ border-bottom: 1px solid #b1b1b180;
+}
+
+.chatbar-list-item:hover{
+ background-color: #E9EBEB;
+ cursor: pointer;
+}
+
+.chatbar-list-item .subtitle{
+ color: #9e9b9b;
+}

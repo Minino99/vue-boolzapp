@@ -161,3 +161,12 @@ const contatti = [
    ],
  },
 ];
+
+const app = new Vue({
+  el: "#app",
+  data: {
+    contatti: contatti,
+  },
+  methods: {
+  },
+});
