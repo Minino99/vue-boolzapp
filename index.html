@@ -50,7 +50,7 @@
         </div>
       </div>
       <div class="chatbar-list flex-grow-1 overflow-auto">
-        <div class="chatbar-list-item py-2 px-4 gap-3 d-flex" v-for="(contatto,i) in contatti">
+        <div class="chatbar-list-item py-2 px-4 gap-3 d-flex overflow-hidden" v-for="(contatto,i) in contatti">
           <div class="avatarsection">
             <img :src=`img/avatar${contatto.avatar}.jpg` class="headerpropic" srcset="" />
           </div>
