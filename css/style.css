@@ -42,6 +42,7 @@ a{
  flex-direction: column;
  width: 40%;
  border-right: solid 1px #b1b1b180;
+ height: 100%;
 }
 
 .chatbar-header{
@@ -76,6 +77,12 @@ a{
  justify-content: center;
 }
 
+.silentbell i{
+ color: #8EDAFC;
+}
+
+
+
 .chatbar-search{
  height: 55px;
  background-color: #FAFAFA;
@@ -89,6 +96,10 @@ a{
 .chatbar-list-item{
  height: 75px;
  border-bottom: 1px solid #b1b1b180;
+}
+
+.chatbar-list-item:first-child{
+ border-top: 1px solid #b1b1b180;
 }
 
 .chatbar-list-item:hover{
