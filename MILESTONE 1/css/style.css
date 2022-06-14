@@ -5,6 +5,10 @@ i{
  cursor: pointer;
 }
 
+body{
+ background-color: #DBDBD3;
+}
+
 a{
  font-size: 0.8rem;
  color: #6b6b6b;
@@ -34,14 +38,14 @@ a{
  display: flex;
  padding-left: 0;
  padding-right: 0;
- border: solid 1px #b1b1b180;
+ border: solid 1px #ebe9e980;
 }
 
 .chatbar{
  display: flex;
  flex-direction: column;
  width: 40%;
- border-right: solid 1px #b1b1b180;
+ border-right: solid 1px #ebe9e980;
  height: 100%;
 }
 
@@ -81,8 +85,6 @@ a{
  color: #8EDAFC;
 }
 
-
-
 .chatbar-search{
  height: 55px;
  background-color: #FAFAFA;
@@ -95,11 +97,11 @@ a{
 
 .chatbar-list-item{
  height: 75px;
- border-bottom: 1px solid #b1b1b180;
+ border-bottom: 1px solid #ebe9e980;
 }
 
 .chatbar-list-item:first-child{
- border-top: 1px solid #b1b1b180;
+ border-top: 1px solid #ebe9e980;
 }
 
 .chatbar-list-item:hover{
@@ -109,4 +111,34 @@ a{
 
 .chatbar-list-item .subtitle{
  color: #9e9b9b;
+}
+
+.chatbox{
+ width: 60%;
+}
+
+.messagesbox{
+ background-image: url(../img/mine.jpg);
+}
+
+.messagecloud{
+ width: 300px;
+ height: 50px;
+ border-radius: 10px;
+}
+
+.sent{
+ background-color: #D5F9BA;
+ align-self: end;
+}
+
+.received{
+ background-color: #FFFFFF;
+ align-self: start;
+}
+
+.message-time{
+ align-self: flex-end;
+ color: #9e9b9b;
+ font-size: 0.7rem;
 }

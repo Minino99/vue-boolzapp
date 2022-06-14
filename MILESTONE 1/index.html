@@ -21,9 +21,10 @@
 <body>
   <div class="greenbox"></div> <!-- greenbox -->
 
-  <div class="container boolzwebapp" id="app"> <!-- container di tutta la webapp-->
+  <div class="container boolzwebapp" id="app">
+    <!-- container di tutta la webapp-->
 
-<!-- INIZIO PORZIONE DI SINISTRA CON PROFILO UTENTE E LISTA CHAT -->
+    <!-- INIZIO PORZIONE DI SINISTRA CON PROFILO UTENTE E LISTA CHAT -->
     <div class="chatbar flex-shrink-0 overflow-hidden">
       <div class="chatbar-header p-2 d-flex justify-content-between align-items-center flex-shrink-0">
         <div class="avatarsection">
@@ -45,7 +46,8 @@
       </div>
       <div class="chatbar-search p-2 d-flex flex-shrink-0">
         <div class="input-group mb-3">
-          <span class="input-group-text bg-white px-4" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
+          <span class="input-group-text bg-white px-4" id="basic-addon1"><i
+              class="fa-solid fa-magnifying-glass"></i></span>
           <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat">
         </div>
       </div>
@@ -60,10 +62,69 @@
           </div>
           <div class="chatbar-time subtitle">12:00</div>
         </div>
-
       </div>
     </div>
-<!-- FINE PORZIONE DI SINISTRA -->
+    <!-- FINE PORZIONE DI SINISTRA -->
+
+    <!-- INZIO PORZIONE DI DESTRA -->
+
+    <div class="chatbox d-flex flex-column overflow-hidden">
+      <div class="chatbar-header p-2 d-flex justify-content-between align-items-center flex-shrink-0">
+        <div class="avatarsection">
+          <div class="d-flex h-100">
+            <img src="img/avatar_1.jpg" alt="my profile picture" class="headerpropic me-3" srcset="" />
+            <div>
+              <div>Michele</div>
+              <div class="subtitle">Ultimo accesso oggi alle 12:00</div>
+            </div>
+          </div>
+        </div>
+        <div class="chatbar-header-icons">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <i class="fa-solid fa-paperclip"></i>
+          <i class="fa-solid fa-ellipsis-vertical"></i>
+        </div>
+      </div>
+
+      <div class="messagesbox flex-grow-1 overflow-auto d-flex flex-column p-5 gap-3">
+        <div class="messagecloud sent d-flex align-items-center justify-content-between px-3 flex-shrink-0">
+          <div>Hai portato a spasso il cane?</div>
+          <div class="message-time subtitle">15:30</div>
+        </div>
+        <div class="messagecloud sent d-flex align-items-center justify-content-between px-3 flex-shrink-0">
+          <div>Ricordati di stendere i panni</div>
+          <div class="message-time subtitle">15:50</div>
+        </div>
+        <div class="messagecloud received d-flex align-items-center justify-content-between px-3 flex-shrink-0">
+          <div>Tutto fatto!</div>
+          <div class="message-time subtitle">16:15</div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+      <div class="chatbar-header p-2 d-flex justify-content-between align-items-center flex-shrink-0">
+        <div class="avatarsection">
+          <div class="d-flex h-100">
+            <img src="img/avatar_1.jpg" alt="my profile picture" class="headerpropic me-3" srcset="" />
+            <div>
+              <div>Michele</div>
+              <div class="subtitle">Ultimo accesso oggi alle 12:00</div>
+            </div>
+          </div>
+        </div>
+        <div class="chatbar-header-icons">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <i class="fa-solid fa-paperclip"></i>
+          <i class="fa-solid fa-ellipsis-vertical"></i>
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <script src="js/script.js"></script>
