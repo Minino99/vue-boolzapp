@@ -158,6 +158,6 @@ a{
  color: #6B7376;
 }
 
-.chatbar-list-item:focus{
+.chatbar-list-item-focussed{
  background-color: #E9EBEB;
 }
