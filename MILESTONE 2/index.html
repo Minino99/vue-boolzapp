@@ -74,9 +74,9 @@
       <div class="chatbar-header p-2 d-flex justify-content-between align-items-center flex-shrink-0">
         <div class="avatarsection">
           <div class="d-flex h-100">
-            <img src="img/avatar_1.jpg" alt="my profile picture" class="headerpropic me-3" srcset="" />
+            <img :src=`img/avatar${contattoSelezionato.avatar}.jpg` alt="my profile picture" class="headerpropic me-3" srcset="" />
             <div>
-              <div>Michele</div>
+              <div>{{ contattoSelezionato.name }}</div>
               <div class="subtitle">Ultimo accesso oggi alle 12:00</div>
             </div>
           </div>
@@ -90,17 +90,10 @@
 
       <!-- NUVOLETTE MESSAGGI -->
       <div class="messagesbox flex-grow-1 overflow-auto d-flex flex-column p-5 gap-3">
-        <div class="messagecloud sent d-flex align-items-center justify-content-between px-3 flex-shrink-0">
-          <div>Hai portato a spasso il cane?</div>
+        <div class="messagecloud d-flex align-items-center justify-content-between px-3 flex-shrink-0"
+        v-for="(messaggio, i) in contattoSelezionato.messages" :class="sentOrReceived(messaggio)">
+          <div>{{ messaggio.message }}</div>
           <div class="message-time subtitle">15:30</div>
-        </div>
-        <div class="messagecloud sent d-flex align-items-center justify-content-between px-3 flex-shrink-0">
-          <div>Ricordati di stendere i panni</div>
-          <div class="message-time subtitle">15:50</div>
-        </div>
-        <div class="messagecloud received d-flex align-items-center justify-content-between px-3 flex-shrink-0">
-          <div>Tutto fatto!</div>
-          <div class="message-time subtitle">16:15</div>
         </div>
       </div>
 

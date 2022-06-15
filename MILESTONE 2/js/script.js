@@ -171,6 +171,13 @@ const app = new Vue({
   methods: {
     selezionaContatto(contatto) {
       this.contattoSelezionato = contatto;
+    },
+    sentOrReceived(messaggio) {
+      if(messaggio.status === "sent") {
+        return "sent";
+      } else {
+      return "received";
     }
+    },
   },
 });
