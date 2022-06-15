@@ -50,7 +50,7 @@
         <div class="input-group mb-3">
           <span class="input-group-text bg-white px-4" id="basic-addon1"><i
               class="fa-solid fa-magnifying-glass"></i></span>
-          <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" v-model="userSearch">
+          <input type="text" @keydown="filterContacts()" class="form-control" placeholder="Cerca o inizia una nuova chat" v-model="userSearch">
         </div>
       </div>
 

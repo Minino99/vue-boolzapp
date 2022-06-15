@@ -182,6 +182,8 @@ const app = new Vue({
               return contatto;
             }
           });
+        }else if (this.userSearch === "") {
+          this.filteredContacts = this.contats;
         }
       },
 
