@@ -165,8 +165,12 @@ const contatti = [
 const app = new Vue({
   el: "#app",
   data: {
-    contatti: contatti,
+    contats: contatti,
+    contattoSelezionato: contatti[0],
   },
   methods: {
+    selezionaContatto(contatto) {
+      this.contattoSelezionato = contatto;
+    }
   },
 });

@@ -52,7 +52,8 @@
         </div>
       </div>
       <div class="chatbar-list flex-grow-1 overflow-auto">
-        <div tabindex="-1" class="chatbar-list-item py-2 px-4 gap-3 d-flex overflow-hidden" v-for="(contatto,i) in contatti">
+        <div tabindex="-1" class="chatbar-list-item py-2 px-4 gap-3 d-flex overflow-hidden"
+          v-for="(contatto,i) in contats" @click="selezionaContatto(contatto)">
           <div class="avatarsection">
             <img :src=`img/avatar${contatto.avatar}.jpg` class="headerpropic" srcset="" />
           </div>
