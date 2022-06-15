@@ -171,22 +171,8 @@ const app = new Vue({
     userSearch: "",
     filteredContacts: contatti,
   },
+
   methods: {
-
-    // se non c'è scritto nulla nella barra di ricerca allora ritorna tutti i contatti altrimenti filtra in base alla ricerca
-
-    filterContacts() {
-      if (this.userSearch !== "") {
-          this.filteredContacts = this.contats.filter((contatto) => {
-            if (contatto.name.toLowerCase().includes(this.userSearch.toLowerCase())) {
-              return contatto;
-            }
-          });
-        }else if (this.userSearch === "") {
-          this.filteredContacts = this.contats;
-        }
-      },
-
       selezionaContatto(contatto) {
         this.contattoSelezionato = contatto;
       },
@@ -228,6 +214,20 @@ const app = new Vue({
 
       },
 
-    }
+    },
+
+    computed : {
+      filterContacts() {
+        if (this.userSearch !== "") {
+            this.filteredContacts = this.contats.filter((contatto) => {
+              if (contatto.name.toLowerCase().includes(this.userSearch.toLowerCase())) {
+                return contatto;
+              }
+            });
+          }else if (this.userSearch === "") {
+            this.filteredContacts = this.contats;
+          }
+        }
+      },
 
   });
