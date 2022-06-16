@@ -214,6 +214,10 @@ const app = new Vue({
 
       },
 
+      deleteMsg(messaggio) {
+        this.contattoSelezionato.messages.splice(this.contattoSelezionato.messages.indexOf(messaggio), 1);
+      },
+
     },
 
     computed : {
