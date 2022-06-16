@@ -15,9 +15,13 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0-beta1/js/bootstrap.bundle.min.js'
     integrity='sha512-ndrrR94PW3ckaAvvWrAzRi5JWjF71/Pw7TlSo6judANOFCmz0d+0YE+qIGamRRSnVzSvIyGs4BTtyFMm3MT/cg=='
     crossorigin='anonymous'></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.7.0-alpha.6/vue.js"
-    integrity="sha512-xqWhZRkptz1Re1+Dndtqmne0sqlhNVLtkI6mu0dZKlg2Hba5Gck7QQYtMsrRV3mtUvZzPafEeM7V/cg03VKlpw=="
-    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.9.8/dayjs.min.js'
+    integrity='sha512-kZ+x2gdehn6OZMWZSp3Vt5R+v9hQTYEATQwaUfWquhxbvNVAy6IRtYs7asdyxKUTqG0I5ZqBqnzcBrpnHJCAGw=='
+    crossorigin='anonymous'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.9.8/plugin/customParseFormat.min.js'
+    integrity='sha512-/rAikt6xZJcTqu7olN/2DFvqXDEUC31/yyFAYrSGi087R+j54QTWWRJxHtbN5NjppOxT3d1gk4ZwkPWX88W35w=='
+    crossorigin='anonymous'></script>
   <title>Boolzapp Web</title>
 </head>
 
@@ -67,7 +71,7 @@
             <div class="contact-name">{{ contatto.name }}</div>
             <div class="subtitle">{{ contatto.messages[contatto.messages.length - 1].message }}</div>
           </div>
-          <div class="chatbar-time subtitle">12:00</div>
+          <div class="chatbar-time subtitle">{{ lastMsgTime(contatto) }}</div>
         </div>
       </div>
     </div>
@@ -103,17 +107,18 @@
           <div class="message-time subtitle d-flex flex-column">
             <div class="align-self-end dropdown">
               <div class="dropdown">
-                <a class="dropdown-icon" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="dropdown-icon" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
+                  aria-expanded="false">
                   <i class="fa-solid fa-chevron-down"></i>
                 </a>
-              
+
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                   <li><a class="dropdown-item" href="#">Message info</a></li>
                   <li><a class="dropdown-item" href="#" @click="deleteMsg(messaggio)">Delete message</a></li>
                 </ul>
               </div>
             </div>
-            <div>15:30</div>
+            <div>{{ formatTime(messaggio) }}</div>
           </div>
         </div>
       </div>
@@ -123,7 +128,7 @@
       <div class="chatbar-inputsection p-2 d-flex align-items-center">
         <div class="px-4 flex-shrink-0"><i class="fa-regular fa-face-smile"></i></div>
         <div class="flex-grow-1 textbox"><input type="text" class="form-control" placeholder="Scrivi un messaggio"
-            v-model="userMsg" @keyup.enter="sendMessage()" @keydown.enter="autoReply()">
+            v-model="userMsg" @keyup.enter="sendMessage()">
         </div>
         <div class="px-4 flex-shrink-0"><i class="fa-solid fa-microphone"></i></div>
       </div>

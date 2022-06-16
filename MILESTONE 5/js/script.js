@@ -1,3 +1,5 @@
+dayjs.extend(dayjs_plugin_customParseFormat);
+
 const contatti = [
   {
     name: "Michele",
@@ -162,6 +164,13 @@ const contatti = [
   },
 ];
 
+contatti.forEach((contatto) => {
+  contatto.messages.forEach((messaggio) => {
+    messaggio.date = dayjs(messaggio.date, 'DD/MM/YYYY HH:mm:ss').format('HH:mm');
+  });
+});
+
+
 const app = new Vue({
   el: "#app",
   data: {
@@ -173,65 +182,72 @@ const app = new Vue({
   },
 
   methods: {
-      selezionaContatto(contatto) {
-        this.contattoSelezionato = contatto;
-      },
+    selezionaContatto(contatto) {
+      this.contattoSelezionato = contatto;
+    },
 
-      highlight(contatto) {
-        if (contatto.avatar === this.contattoSelezionato.avatar) {
-          return "chatbar-list-item-focussed";
-        }
-      },
+    highlight(contatto) {
+      if (contatto.avatar === this.contattoSelezionato.avatar) {
+        return "chatbar-list-item-focussed";
+      }
+    },
 
-      sentOrReceived(messaggio) {
-        if (messaggio.status === "sent") {
-          return "sent";
-        } else {
-          return "received";
-        }
-      },
+    sentOrReceived(messaggio) {
+      if (messaggio.status === "sent") {
+        return "sent";
+      } else {
+        return "received";
+      }
+    },
 
-      sendMessage() {
-        let today = new Date();
-        if (this.userMsg !== "") {
+    sendMessage() {
+      if (this.userMsg !== "") {
+        this.contattoSelezionato.messages.push({
+          date: dayjs().format("HH:mm"),
+          message: this.userMsg,
+          status: "sent",
+        });
+
+        this.userMsg = "";
+
+        setTimeout(() => {
           this.contattoSelezionato.messages.push({
-            date: today.getHours() + ":" + today.getMinutes(),
-            message: this.userMsg,
-            status: "sent",
+            date: dayjs().format("HH:mm"),
+            message: "ok 🍺",
+            status: "received",
           });
+        }, 1000);
 
-          this.userMsg = "";
-
-          setTimeout(() => {
-            this.contattoSelezionato.messages.push({
-              date: today.getHours() + ":" + today.getMinutes(),
-              message: "ok 🍺",
-              status: "received",
-            });
-          }, 1000);
-
-        }
-
-      },
-
-      deleteMsg(messaggio) {
-        this.contattoSelezionato.messages.splice(this.contattoSelezionato.messages.indexOf(messaggio), 1);
-      },
+      }
 
     },
 
-    computed : {
-      filterContacts() {
-        if (this.userSearch !== "") {
-            this.filteredContacts = this.contats.filter((contatto) => {
-              if (contatto.name.toLowerCase().includes(this.userSearch.toLowerCase())) {
-                return contatto;
-              }
-            });
-          }else if (this.userSearch === "") {
-            this.filteredContacts = this.contats;
-          }
-        }
-      },
+    deleteMsg(messaggio) {
+      this.contattoSelezionato.messages.splice(this.contattoSelezionato.messages.indexOf(messaggio));
+    },
 
-  });
+    lastMsgTime(contatto) {
+      return contatto.messages[contatto.messages.length - 1].date;
+    },
+
+    formatTime(messaggio) {
+      return messaggio.date;
+    },
+
+  },
+
+  computed: {
+    filterContacts() {
+      if (this.userSearch !== "") {
+        this.filteredContacts = this.contats.filter((contatto) => {
+          if (contatto.name.toLowerCase().includes(this.userSearch.toLowerCase())) {
+            return contatto;
+          }
+        });
+      } else if (this.userSearch === "") {
+        this.filteredContacts = this.contats;
+      }
+    }
+  },
+
+});
